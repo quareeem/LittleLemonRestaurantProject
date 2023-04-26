@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
+    # 'rest_framework.authtoken',
+    'djoser',
+    'restaurant_app',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +53,29 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+
+    'DEFAULT_FILTER_CLASSES': [
+        'rest_framework.filters.OrderingFilter',
+        'rest_framework.filters.SearchFilter',
+    ],
+
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 4
+}
+
+DJOSER = {
+    "USER_ID_FIELD": "username",
+
+    'SERIALIZERS': {
+        'user_create': 'users_app.serializers.CustomUserCreateSerializer',
+    },
+}
 
 ROOT_URLCONF = 'LittleLemonRestaurantProject.urls'
 
@@ -79,17 +107,17 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3', 
     },
 
-    'mysql': {   
-        'ENGINE': 'django.db.backends.mysql',   
-        'NAME': 'LittleLemon',   
-        'USER': 'root',
-        'PASSWORD': 'root',   
-        'HOST': '127.0.0.1',   
-        'PORT': '3306',   
-        'OPTIONS': {   
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"   
-        } 
-    }
+    # 'mysql': {   
+    #     'ENGINE': 'django.db.backends.mysql',   
+    #     'NAME': 'LittleLemon',   
+    #     'USER': 'root',
+    #     'PASSWORD': 'root',   
+    #     'HOST': '127.0.0.1',   
+    #     'PORT': '3306',   
+    #     'OPTIONS': {   
+    #         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"   
+    #     } 
+    # }
 }
 
 
