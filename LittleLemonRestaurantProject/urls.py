@@ -20,6 +20,8 @@ from django.urls import include, path, re_path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('users_app.urls')),
+    path('restaurant/', include('restaurant_app.urls')),
+    path('booking/', include('booking_app.urls')),
     
     re_path(r'^auth/', include('djoser.urls')),
     re_path(r'^auth/', include('djoser.urls.authtoken')),
