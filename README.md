@@ -8,27 +8,9 @@
 Note that these commands assume you're using Python 3 and have already navigated to your Django project directory in the terminal or command prompt. The specific syntax and options may vary depending on the version of Django you're using and the structure of your project.
 
 
-## Endpoints
-
-baseurl = http://127.0.0.1:8000/
-
-* `admin/`: The admin panel for managing your Django project.
-* `auth/register/`: The registration endpoint for creating new user accounts.
-* `auth/login/`: The login endpoint for existing users to authenticate themselves.
-* `restaurant/`: The endpoint for managing restaurants in your project.
-* `booking/`: The endpoint for managing bookings made by customers.
-* `auth/users/`: The endpoint for retrieving, updating, and deleting user information.
-* `auth/token/login/`: The token authentication endpoint for obtaining an access token.
-* `auth/token/logout/`: The token authentication endpoint for revoking an access token.
-
-
-
-## erferf
-
-
-Sure, here's the markdown format for the above JSON chunk:
 
 # API Endpoints
+- baseurl = `http://127.0.0.1:8000/`
 
 ## Restaurant App
 
@@ -79,7 +61,7 @@ Sure, here's the markdown format for the above JSON chunk:
 
 
 
-## Groups
+## Users App
 
 ### List all groups
 - **GET** `/auth/group`
@@ -97,9 +79,6 @@ Sure, here's the markdown format for the above JSON chunk:
 - **GET** `/auth/groups/delivery-crew/users` - List all users in delivery-crew group: 
 - **POST** `/auth/groups/delivery-crew/users` - Create new user in delivery-crew group: 
 - **DELETE** `/auth/groups/delivery-crew/users/:id` - Delete user from delivery-crew group: 
-
-To document the API endpoints for the Django website with the `restaurant_app` and `booking_app` applications, we can use the following format in the README.md file:
-
 
 
 
@@ -126,6 +105,3 @@ To document the API endpoints for the Django website with the `restaurant_app` a
 
 - `GET /auth/users/`: Retrieve information about the authenticated user. Authentication required with a token in the `Authorization` header.
 
-### Manager
-
-- `GET /api/manager`: Retrieve information about the manager. Authentication required with a token in the `Authorization` header.
