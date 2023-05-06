@@ -11,7 +11,7 @@ python3 manage.py runserver
 
 Note that these commands assume you're using Python 3 and have already navigated to your Django project directory in the terminal or command prompt. The specific syntax and options may vary depending on the version of Django you're using and the structure of your project.
 
-
+# - - - - - - - - -
 
 # API Endpoints
 - baseurl = `http://127.0.0.1:8000/`
