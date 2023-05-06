@@ -26,7 +26,7 @@ def book(request):
     return render(request, 'book.html', context)
 
 def reservations(request):
-    return render(request, 'bookings.html')
+    return render(request, 'bookings_new.html')
 
 @csrf_exempt
 def bookings(request):
@@ -47,8 +47,6 @@ def bookings(request):
             return JsonResponse({'status': 'error', 'message': 'Reservation already exists'})
     
     date = request.GET.get('date', None)
-    # if date == '':
-    #     raise ValidationError("Invalid date format. Must be in YYYY-MM-DD format.")
     if not date:
         bookings = Booking.objects.all()
     else:

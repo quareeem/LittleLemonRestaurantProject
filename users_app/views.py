@@ -1,11 +1,8 @@
 from rest_framework.response import Response
-from rest_framework.status import HTTP_207_MULTI_STATUS, HTTP_403_FORBIDDEN, HTTP_201_CREATED, HTTP_200_OK, HTTP_204_NO_CONTENT
-from rest_framework.decorators import permission_classes, api_view
+from rest_framework.status import HTTP_201_CREATED, HTTP_200_OK
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.generics import get_object_or_404
-from django.forms.models import model_to_dict
-
 
 from django.contrib.auth.models import Group, User
 
@@ -28,7 +25,7 @@ class UserViewset(ModelViewSet):
 class UserManagerViewset(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = CurrentUserSerializer
-    # permission_classes = [IsAdminUser]
+    permission_classes = [IsAdminUser]
 
     def list(self, request, *args, **kwargs):
         self.queryset = self.queryset.filter(groups__name='Manager')
@@ -52,6 +49,7 @@ class UserManagerViewset(ModelViewSet):
 class UserDeliveryViewset(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = CurrentUserSerializer   
+    permission_classes = [IsAdminUser]
 
     def list(self, request, *args, **kwargs):
         self.queryset = self.queryset.filter(groups__name='Delivery')
