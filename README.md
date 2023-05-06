@@ -1,9 +1,9 @@
 ## Starting commands:
 
-* `python3 manage.py makemigrations`: Creates new database migration files based on any changes you've made to your Django models since the last migration.
-* `python3 manage.py migrate`: Synchronizes the database schema with the models defined in your Django app.
+* `python3 manage.py makemigrations`
+* `python3 manage.py migrate`
 * `python3 manage.py createinitialdata`: Prepopulates initial data for both Restaurant App and Booking App.
-* `python3 manage.py runserver`: Starts the development server on `http://127.0.0.1:8000/`.
+* `python3 manage.py runserver`: Starts server on `http://127.0.0.1:8000/`.
 
 Note that these commands assume you're using Python 3 and have already navigated to your Django project directory in the terminal or command prompt. The specific syntax and options may vary depending on the version of Django you're using and the structure of your project.
 
