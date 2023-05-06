@@ -1,9 +1,11 @@
-## Starting commands:
+# Starting commands:
 
 * `python3 manage.py makemigrations`
 * `python3 manage.py migrate`
 * `python3 manage.py createinitialdata`: Prepopulates initial data for both Restaurant App and Booking App.
 * `python3 manage.py runserver`: Starts server on `http://127.0.0.1:8000/`.
+
+DO NOT FORGET TO RUN `python3 manage.py createinitialdata`
 
 Note that these commands assume you're using Python 3 and have already navigated to your Django project directory in the terminal or command prompt. The specific syntax and options may vary depending on the version of Django you're using and the structure of your project.
 
@@ -12,7 +14,7 @@ Note that these commands assume you're using Python 3 and have already navigated
 # API Endpoints
 - baseurl = `http://127.0.0.1:8000/`
 
-## Restaurant App
+## Restaurant App (API)
 
 ### Category
 - **GET** `/restaurant/category` - Get a list of categories
@@ -44,7 +46,7 @@ Note that these commands assume you're using Python 3 and have already navigated
 
 
 
-## Booking App
+## Booking App (BOOKING SERVICE THAT HAS FRONTEND)
 ### Reservation
 - **GET** `/booking/reservation` - Get a list of reservations
 - **GET** `/booking/reservation/{id}` - Get a specific reservation
