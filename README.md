@@ -82,41 +82,21 @@ Sure, here's the markdown format for the above JSON chunk:
 ## Groups
 
 ### List all groups
-- URL: `/auth/group`
-- Method: `GET`
+- **GET** `/auth/group`
 
 ### List all users in all groups
-- URL: `/auth/groups/all/users`
-- Method: `GET`
+- **GET** `/auth/groups/all/users`
 
-### List all users in manager group
-- URL: `/auth/groups/manager/users`
-- Method: `GET`
+### Manager Group
+- **GET** `/auth/groups/manager/users` - List all users in manager group: 
+- **POST** `/auth/groups/manager/users` - Create new user in manager group: 
+- **DELETE** `/auth/groups/manager/users/:id` - Delete user from manager group: 
+- **PATCH**  `/auth/groups/manager/users/:id` - Update user in manager group: 
 
-### Create new user in manager group
-- URL: `/auth/groups/manager/users`
-- Method: `POST`
-
-### Delete user from manager group
-- URL: `/auth/groups/manager/users/:id`
-- Method: `DELETE`
-
-### Update user in manager group
-- URL: `/auth/groups/manager/users/:id`
-- Method: `PATCH`
-
-### List all users in delivery-crew group
-- URL: `/auth/groups/delivery-crew/users`
-- Method: `GET`
-
-### Create new user in delivery-crew group
-- URL: `/auth/groups/delivery-crew/users`
-- Method: `POST`
-
-### Delete user from delivery-crew group
-- URL: `/auth/groups/delivery-crew/users/:id`
-- Method: `DELETE`
-
+### Delivery-Crew Group
+- **GET** `/auth/groups/delivery-crew/users` - List all users in delivery-crew group: 
+- **POST** `/auth/groups/delivery-crew/users` - Create new user in delivery-crew group: 
+- **DELETE** `/auth/groups/delivery-crew/users/:id` - Delete user from delivery-crew group: 
 
 To document the API endpoints for the Django website with the `restaurant_app` and `booking_app` applications, we can use the following format in the README.md file:
 
